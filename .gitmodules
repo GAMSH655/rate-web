@@ -1,0 +1,6 @@
+[submodule "my-sanity-project"]
+  path = my-sanity-project
+  url = https://github.com/GAMSH655/my-sanity-project.git
+[submodule "rating-website"]
+  path = rating-website
+  url = https://github.com/GAMSH655/rating-website.git
