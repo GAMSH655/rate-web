@@ -10,11 +10,7 @@ const Header = () => {
 
         const NavLinks = [
             { path: "/", pathName: "Food" },
-            { path: "/product", pathName: "Product review" },
-            { path: "#skills", pathName: "Skills" },
-            { path: "#portfolio", pathName: "Portfolio" },
-            { path: "#review", pathName: "Review" },
-            { path: "#contact", pathName: "Contact" },
+            { path: "/product", pathName: "Product review" }
         ];
 
     return (
