@@ -55,6 +55,7 @@ const CarDetails = () => {
     return (
       <h2 className="text-center mt-10 text-red-500">
         {error ? "Failed to load car details." : "Car not found."}
+      {  console.log(error)}
       </h2>
     );
   return (
@@ -73,7 +74,7 @@ const CarDetails = () => {
         {singleCar.title}
       </h1>
 
-      {/* About Section */}
+     
       {singleCar.about && (
         <div className="prose lg:prose-xl mx-auto my-6">
           <h2 className="font-bold text-xl mb-2">About</h2>
@@ -85,7 +86,7 @@ const CarDetails = () => {
         </div>
       )}
 
-      {/* Car Information Sections */}
+    
       <div className="">
         {singleCar.information && (
           <div className="prose lg:prose-xl mx-auto m-5">
@@ -107,7 +108,7 @@ const CarDetails = () => {
         )}
  
 
-      {/* Trim Levels */}
+     
       {singleCar.levels && (
         <div className="prose lg:prose-xl mx-auto my-6">
           <h2 className="font-bold text-xl mb-2">Trim Levels</h2>
@@ -115,7 +116,7 @@ const CarDetails = () => {
         </div>
       )}
 
-      {/* Pricing */}
+    
       {singleCar.prices && (
         <div className="prose lg:prose-xl mx-auto my-6">
           <h2 className="font-bold text-xl mb-2">Pricing</h2>

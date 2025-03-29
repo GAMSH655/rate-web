@@ -12,7 +12,7 @@ function urlFor(source) {
 }
 
 const Car = () => {
-  const [cars, setCars] = useState([]); // Renamed from foods → cars
+  const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -21,6 +21,9 @@ const Car = () => {
     const fetchCars = async () => {
       try {
         setIsLoading(true);
+        setError(null);
+        console.log("Fetching cars...");
+
         const data = await client.fetch(`
           *[_type == "car"] {
             title,
@@ -29,7 +32,7 @@ const Car = () => {
               asset->{ url },
               alt
             },
-            about,
+             about,
             information,
             performance,
             features,
@@ -37,7 +40,14 @@ const Car = () => {
             prices
           }
         `);
-        setCars(data);
+
+        if (!data || data.length === 0) {
+          console.error("No cars found");
+          setError(new Error("No cars found"));
+        } else {
+          console.log("Cars fetched successfully:", data);
+          setCars(data);
+        }
       } catch (err) {
         console.error("Failed to fetch cars:", err);
         setError(err);
@@ -74,7 +84,7 @@ const Car = () => {
     <div className="w-full">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {cars.map((car, index) => (
-          <div className="shadow-lg rounded-md p-4 w-full" key={`${car.slug.current}-${index}`}>
+          <div className="shadow-lg rounded-md p-4 w-full" key={car?.slug?.current || `car-${index}`}>
             {car.image?.asset && (
               <img
                 src={urlFor(car.image).width(400).url()}
@@ -92,7 +102,7 @@ const Car = () => {
               <div className="font-merriweather-sans text-sm mt-2">
                 <BlockContent
                   blocks={car.about}
-                  projectId="6qtjsivo"
+                  projectId= "6qtjsivo"
                   dataset="production"
                   className="font-merriweather-sans text-sm"
                   serializers={{
@@ -105,9 +115,10 @@ const Car = () => {
             )}
 
             <button
+              aria-label={`Read more about ${car.title}`}
               type="button"
               className="flex items-center mt-2 text-blue-600 hover:text-blue-800 transition-all"
-              onClick={() => navigate(`/CarDetails/${car.slug.current}`)}
+              onClick={() => navigate(`/carDetails/${car?.slug?.current}`)}
             >
               Read more <FaArrowRight className="ml-2 mt-[4px]" />
             </button>
