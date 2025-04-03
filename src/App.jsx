@@ -7,6 +7,7 @@ import SinglePost from '../src/Pages/SinglePost';
 import CarDetails from './Pages/CarDetails';
 import CreamDetails from "./Pages/CreamDetails"
 import Cream from './Pages/Cream';
+import Footer from "./Componets/Footer"
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/Cream" element={<Cream/>} />
         <Route path="/CreamDetails/:slug" element={<CreamDetails/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };
