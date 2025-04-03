@@ -5,6 +5,8 @@ import Home from '../src/Pages/Food';
 import ProductReview from '../src/Pages/ProductReview';
 import SinglePost from '../src/Pages/SinglePost';
 import CarDetails from './Pages/CarDetails';
+import CreamDetails from "./Pages/CreamDetails"
+import Cream from './Pages/Cream';
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,6 +16,8 @@ const App = () => {
         <Route path='/product' element={<ProductReview />} />
         <Route path='/food/:slug' element={<SinglePost />} />
         <Route path="/CarDetails/:slug" element={<CarDetails />} />
+        <Route path="/Cream" element={<Cream/>} />
+        <Route path="/CreamDetails/:slug" element={<CreamDetails/>} />
       </Routes>
     </BrowserRouter>
   );

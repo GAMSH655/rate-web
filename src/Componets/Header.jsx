@@ -10,7 +10,8 @@ const Header = () => {
 
         const NavLinks = [
             { path: "/", pathName: "Food" },
-            { path: "/product", pathName: "Product review" }
+            { path: "/product", pathName: "cars" },
+            { path: "/cream", pathName: "beauty" }
         ];
 
     return (

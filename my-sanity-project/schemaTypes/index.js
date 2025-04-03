@@ -4,4 +4,5 @@ import post from './post'
 import author from './author'
 import food from "./Food"
 import  car from "./car"
-export const schemaTypes = [post, author, category, blockContent , food , car]
+import cream from "./cream"
+export const schemaTypes = [post, author, category, blockContent , food , car , cream]
