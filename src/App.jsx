@@ -8,10 +8,12 @@ import CarDetails from './Pages/CarDetails';
 import CreamDetails from "./Pages/CreamDetails"
 import Cream from './Pages/Cream';
 import Footer from "./Componets/Footer"
+import Scroll from "./Componets/Sroll"
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
+      <Scroll/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/product' element={<ProductReview />} />
