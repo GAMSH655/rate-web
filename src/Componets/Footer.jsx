@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Blog from "../assets/Blog.png"
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white mt-10 pt-12 pb-6">
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between">
           {/* Company Info */}
           <div className="mb-8 md:mb-0">
-            <h3 className="text-2xl font-bold mb-4">Your Company</h3>
+            <img src={Blog} alt="" className='size-[50px]' />
             <p className="max-w-xs text-gray-400">
               Building amazing products to solve your business problems.
             </p>
